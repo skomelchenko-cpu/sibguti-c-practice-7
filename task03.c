@@ -1,5 +1,5 @@
 #include <stdio.h>
-static double cube_of_sum(double a, double b){
+double cube_of_sum(double a, double b){
     double sum = a + b;
     return sum * sum * sum;
 }
