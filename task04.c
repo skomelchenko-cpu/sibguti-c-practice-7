@@ -1,5 +1,5 @@
 #include <stdio.h>
-static void sort_three(double *a, double *b, double *c){
+void sort_three(double *a, double *b, double *c){
     double temp;
     if (*a > *b){
         temp = *a;
