@@ -1,19 +1,13 @@
 #include <stdio.h>
 #include <stdbool.h>
-bool prime_recursive_check(unsigned long long n, unsigned long long divisor){
+bool is_prime_recursive(unsigned long long n, unsigned long long divisor){
     if (divisor > n / divisor){
         return true;
     }
     if (n % divisor == 0){
         return false;
     }
-    return prime_recursive_check(n, divisor + 1);
-}
-bool is_prime_recursive(unsigned long long n){
-    if (n < 2){
-        return false;
-    }
-    return prime_recursive_check(n, 2);
+    return is_prime_recursive(n, divisor + 1);
 }
 bool is_prime_iterative(unsigned long long n){
     unsigned long long divisor;
@@ -44,7 +38,7 @@ int main(void){
             return 0;
         }
         recursive_result = is_prime_recursive((unsigned long long)number);
-        iterative_result = is_prime_iterative((unsigned long long)number);
+        iterative_result = is_prime_iterative((unsigned long long)number, 2);
     }
     printf("Recursive: %s\n", recursive_result ? "prime" : "not prime");
     printf("Iterative: %s\n", iterative_result ? "prime" : "not prime");
