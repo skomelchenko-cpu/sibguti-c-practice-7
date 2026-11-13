@@ -6,7 +6,7 @@ static double cube_of_sum(double a, double b){
 int main(void){
     double a, b;
     int ch;
-    printf("Enter pairs of numbers (Ctrl+D / Ctrl+Z to finish):\n");
+    printf("Enter pairs of numbers (Ctrl+D to finish):\n");
     while (1){
         int status = scanf("%lf %lf", &a, &b);
         if (status == EOF){
