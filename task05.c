@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-static bool prime_recursive_check(unsigned long long n, unsigned long long divisor){
+bool prime_recursive_check(unsigned long long n, unsigned long long divisor){
     if (divisor > n / divisor){
         return true;
     }
@@ -9,13 +9,13 @@ static bool prime_recursive_check(unsigned long long n, unsigned long long divis
     }
     return prime_recursive_check(n, divisor + 1);
 }
-static bool is_prime_recursive(unsigned long long n){
+bool is_prime_recursive(unsigned long long n){
     if (n < 2){
         return false;
     }
     return prime_recursive_check(n, 2);
 }
-static bool is_prime_iterative(unsigned long long n){
+bool is_prime_iterative(unsigned long long n){
     unsigned long long divisor;
     if (n < 2){
         return false;
